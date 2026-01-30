@@ -264,7 +264,11 @@ namespace OpenAC.Net.Core.Extensions
             {
                 if (toReverse.IsEmpty() || toReverse.Length == 1) return toReverse;
 
-                return new string(toReverse.ToCharArray().Reverse().ToArray());
+                var charArray = toReverse.ToCharArray();
+                
+                Array.Reverse(charArray);
+
+                return new string(charArray);
             }
             catch (Exception ex)
             {
